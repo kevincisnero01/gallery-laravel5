@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: gestordegaleria
+        psr4_prefix: gestordegaleria
+        src_path: app
