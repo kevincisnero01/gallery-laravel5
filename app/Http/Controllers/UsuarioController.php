@@ -17,4 +17,9 @@ class UsuarioController extends Controller {
 		return 'Generando actualizacion de perfil';
 	}
 
+	public function missingMethod($parameters = array())
+	{
+		abort(404);
+	}
+
 }

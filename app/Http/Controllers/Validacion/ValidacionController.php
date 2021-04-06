@@ -1,11 +1,11 @@
-<?php namespace gestordegaleria\Http\Controllers\Auth;
+<?php namespace gestordegaleria\Http\Controllers\Validacion;
 
 use gestordegaleria\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
-class AuthController extends Controller {
+class ValidacionController extends Controller {
 
 	protected $auth;
 
@@ -24,7 +24,7 @@ class AuthController extends Controller {
 		return 'formulario creacion cuenta';
 	}
 
-	public function postRegister(Request $request)
+	public function postRegistro(Request $request)
 	{
 		$validator = $this->registrar->validator($request->all());
 
@@ -40,12 +40,12 @@ class AuthController extends Controller {
 		return redirect($this->redirectPath());
 	}
 
-	public function getLogin()
+	public function getEntrada()
 	{
 		return 'mostrando formulario de inicio de sesion';
 	}
 
-	public function postLogin(Request $request)
+	public function postEntrada(Request $request)
 	{
 		$this->validate($request, [
 			'email' => 'required|email', 'password' => 'required',
@@ -70,7 +70,7 @@ class AuthController extends Controller {
 		return 'Email o Contraseña incorrectas.';
 	}
 
-	public function getLogout()
+	public function getSalida()
 	{
 		$this->auth->logout();
 
@@ -89,7 +89,7 @@ class AuthController extends Controller {
 
 	public function loginPath()
 	{
-		return property_exists($this, 'loginPath') ? $this->loginPath : '/validado/iniciar';
+		return property_exists($this, 'loginPath') ? $this->loginPath : '/validacion/iniciar';
 	}
 
 	public function getRecuperar()
