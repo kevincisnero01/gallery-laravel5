@@ -40,12 +40,12 @@ class ValidacionController extends Controller {
 		return redirect($this->redirectPath());
 	}
 
-	public function getEntrada()
+	public function getInicio()
 	{
 		return 'mostrando formulario de inicio de sesion';
 	}
 
-	public function postEntrada(Request $request)
+	public function postInicio(Request $request)
 	{
 		$this->validate($request, [
 			'email' => 'required|email', 'password' => 'required',
