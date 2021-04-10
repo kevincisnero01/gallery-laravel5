@@ -12,17 +12,19 @@ class AlbunesSeeder extends Seeder {
 	public function run()
 	{
 		$usuarios = Usuario::all();
+		$contador = 0;
 
 		foreach($usuarios as $usuario)
-		{
-			$cantidad = rand(0,5);
+		{	
+			$cantidad = mt_rand(0,10);
 
 			for ($i=0; $i < $cantidad; $i++) 
-			{ 
+			{ 	
+				$contador++;
 				Album::create(
 				[
-					'nombre' => "Nombre de album$i",
-					'descripcion' => "Descripcion de album$i",
+					'nombre' => "Nombre de album$contador",
+					'descripcion' => "Descripcion de album$contador",
 					'usuario_id' => $usuario->id
 				]);
 			}
