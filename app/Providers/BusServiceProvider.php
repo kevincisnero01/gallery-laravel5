@@ -1,4 +1,4 @@
-<?php namespace gestordegaleria\Providers;
+<?php namespace GestorGaleria\Providers;
 
 use Illuminate\Bus\Dispatcher;
 use Illuminate\Support\ServiceProvider;
@@ -16,7 +16,7 @@ class BusServiceProvider extends ServiceProvider {
 		$dispatcher->mapUsing(function($command)
 		{
 			return Dispatcher::simpleMapping(
-				$command, 'gestordegaleria\Commands', 'gestordegaleria\Handlers\Commands'
+				$command, 'GestorGaleria\Commands', 'GestorGaleria\Handlers\Commands'
 			);
 		});
 	}

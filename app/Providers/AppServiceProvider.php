@@ -1,4 +1,4 @@
-<?php namespace gestordegaleria\Providers;
+<?php namespace GestorGaleria\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider {
 	{
 		$this->app->bind(
 			'Illuminate\Contracts\Auth\Registrar',
-			'gestordegaleria\Services\Registrar'
+			'GestorGaleria\Services\Registrar'
 		);
 	}
 

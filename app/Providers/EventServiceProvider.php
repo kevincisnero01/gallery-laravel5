@@ -1,4 +1,4 @@
-<?php namespace gestordegaleria\Providers;
+<?php namespace GestorGaleria\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;

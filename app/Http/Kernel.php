@@ -1,4 +1,4 @@
-<?php namespace gestordegaleria\Http;
+<?php namespace GestorGaleria\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -15,7 +15,7 @@ class Kernel extends HttpKernel {
 		'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
 		'Illuminate\Session\Middleware\StartSession',
 		'Illuminate\View\Middleware\ShareErrorsFromSession',
-		'gestordegaleria\Http\Middleware\VerifyCsrfToken',
+		'GestorGaleria\Http\Middleware\VerifyCsrfToken',
 	];
 
 	/**
@@ -24,9 +24,9 @@ class Kernel extends HttpKernel {
 	 * @var array
 	 */
 	protected $routeMiddleware = [
-		'auth' => 'gestordegaleria\Http\Middleware\Authenticate',
+		'auth' => 'GestorGaleria\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-		'guest' => 'gestordegaleria\Http\Middleware\RedirectIfAuthenticated',
+		'guest' => 'GestorGaleria\Http\Middleware\RedirectIfAuthenticated',
 	];
 
 }

@@ -1,4 +1,4 @@
-<?php namespace gestordegaleria;
+<?php namespace GestorGaleria;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,7 +9,7 @@ class Foto extends Model{
 	 *
 	 * @var string
 	 */
-	protected $table = 'foto';
+	protected $table = 'fotos';
 
 	/**
 	 * The attributes that are mass assignable.
@@ -20,7 +20,7 @@ class Foto extends Model{
 
 	public function album()
 	{
-		return $this->belongsTo('gestordegaleria\Album');
+		return $this->belongsTo('GestorGaleria\Album');
 	}
 
 }

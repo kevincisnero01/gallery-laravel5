@@ -1,4 +1,4 @@
-<?php namespace gestordegaleria\Http\Controllers;
+<?php namespace GestorGaleria\Http\Controllers;
 
 class UsuarioController extends Controller {
 

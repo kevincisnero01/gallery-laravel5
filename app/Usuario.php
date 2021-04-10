@@ -1,4 +1,4 @@
-<?php namespace gestordegaleria;
+<?php namespace GestorGaleria;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -15,7 +15,7 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 	 *
 	 * @var string
 	 */
-	protected $table = 'usuario';
+	protected $table = 'usuarios';
 
 	/**
 	 * The attributes that are mass assignable.
@@ -33,7 +33,7 @@ class Usuario extends Model implements AuthenticatableContract, CanResetPassword
 
 	public function albumes()
 	{
-		return $this->hasMany('gestordegaleria\Album');
+		return $this->hasMany('GestorGaleria\Album');
 	}
 
 }

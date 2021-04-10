@@ -1,4 +1,4 @@
-<?php namespace gestordegaleria\Exceptions;
+<?php namespace GestorGaleria\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;

@@ -1,4 +1,4 @@
-<?php namespace gestordegaleria\Http\Middleware;
+<?php namespace GestorGaleria\Http\Middleware;
 
 use Closure;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as BaseVerifier;

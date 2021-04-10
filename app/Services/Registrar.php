@@ -1,6 +1,6 @@
-<?php namespace gestordegaleria\Services;
+<?php namespace GestorGaleria\Services;
 
-use gestordegaleria\User;
+use GestorGaleria\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 

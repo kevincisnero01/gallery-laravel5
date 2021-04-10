@@ -16,7 +16,7 @@
 			"database"
 		],
 		"psr-4": {
-			"gestordegaleria\\": "app/"
+			"GestorGaleria\\": "app/"
 		}
 	},
 	"autoload-dev": {

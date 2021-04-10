@@ -1,4 +1,4 @@
-<?php namespace gestordegaleria\Providers;
+<?php namespace GestorGaleria\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,4 +1,4 @@
-<?php namespace gestordegaleria;
+<?php namespace GestorGaleria;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,7 +9,7 @@ class Album extends Model {
 	 *
 	 * @var string
 	 */
-	protected $table = 'album';
+	protected $table = 'albunes';
 
 	/**
 	 * The attributes that are mass assignable.
@@ -20,12 +20,12 @@ class Album extends Model {
 
 	public function fotos()
 	{
-		return $this->hasMany('gestordegaleria\Foto');
+		return $this->hasMany('GestorGaleria\Foto');
 	}
 
 	public function propietario()
 	{
-		return $this->belongsTo('gestordegaleria\Usuario');
+		return $this->belongsTo('GestorGaleria\Usuario');
 	}
 
 }

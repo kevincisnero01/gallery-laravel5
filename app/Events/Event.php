@@ -1,4 +1,4 @@
-<?php namespace gestordegaleria\Events;
+<?php namespace GestorGaleria\Events;
 
 abstract class Event {
 

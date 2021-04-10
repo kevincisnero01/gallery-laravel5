@@ -1,4 +1,4 @@
-<?php namespace gestordegaleria\Http\Controllers;
+<?php namespace GestorGaleria\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Routing\Controller as BaseController;

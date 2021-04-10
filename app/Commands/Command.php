@@ -1,4 +1,4 @@
-<?php namespace gestordegaleria\Commands;
+<?php namespace GestorGaleria\Commands;
 
 abstract class Command {
 

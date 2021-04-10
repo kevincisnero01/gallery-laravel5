@@ -3,6 +3,10 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
+use GestorGaleria\Album;
+use GestorGaleria\Foto;
+use GestorGaleria\Usuario;
+
 class DatabaseSeeder extends Seeder {
 
 	/**
@@ -12,9 +16,15 @@ class DatabaseSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		Model::unguard();
+		DB::statement('SET FOREIGN_KEY_CHECKS = 0'); //Para no comprobar la llave foranea
 
-		// $this->call('UserTableSeeder');
+		Foto::truncate();
+		Album::truncate();
+		Usuario::truncate();
+
+		$this->call('UsuariosSeeder');
+		$this->call('AlbunesSeeder');
+		$this->call('FotosSeeder');
 	}
 
 }

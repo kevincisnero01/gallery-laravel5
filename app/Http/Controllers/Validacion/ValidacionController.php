@@ -1,6 +1,6 @@
-<?php namespace gestordegaleria\Http\Controllers\Validacion;
+<?php namespace GestorGaleria\Http\Controllers\Validacion;
 
-use gestordegaleria\Http\Controllers\Controller;
+use GestorGaleria\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
