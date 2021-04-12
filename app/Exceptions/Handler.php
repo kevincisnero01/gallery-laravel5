@@ -2,6 +2,7 @@
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Session\TokenMismatchException;
 
 class Handler extends ExceptionHandler {
 
@@ -36,14 +37,17 @@ class Handler extends ExceptionHandler {
 	 */
 	public function render($request, Exception $e)
 	{
-		if ($this->isHttpException($e))
+		if($e instanceof TokenMismatchException)
 		{
-			return $this->renderHttpException($e);
+			return redirect($request->url())->with('csrf','Al parecer paso mucho tiempo, intenta de nuevo');
 		}
-		else
+
+		if(config('app.debug'))
 		{
 			return parent::render($request, $e);
 		}
+
+		return redirect('/')->with('error','Algo salio mal');
 	}
 
 }
