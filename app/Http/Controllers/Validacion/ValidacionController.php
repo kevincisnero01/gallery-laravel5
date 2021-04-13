@@ -4,6 +4,7 @@ use GestorGaleria\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Http\Request;
 
 class ValidacionController extends Controller {
 
@@ -16,7 +17,7 @@ class ValidacionController extends Controller {
 		$this->auth = $auth;
 		$this->registrar = $registrar;
 
-		$this->middleware('guest', ['except' => 'getLogout']);
+		$this->middleware('guest', ['except' => 'getSalida']);
 	}
 
 	public function getRegistro() 
@@ -89,7 +90,7 @@ class ValidacionController extends Controller {
 
 	public function loginPath()
 	{
-		return property_exists($this, 'loginPath') ? $this->loginPath : '/validacion/iniciar';
+		return property_exists($this, 'loginPath') ? $this->loginPath : '/validacion/inicio';
 	}
 
 	public function getRecuperar()

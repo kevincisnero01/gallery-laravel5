@@ -9,7 +9,7 @@ class InicioController extends Controller {
 
 	public function getIndex()
 	{
-		return 'Pagina de inicio validada';
+		return view('inicio');
 	}
 
 	public function missingMethod($parameters = array())

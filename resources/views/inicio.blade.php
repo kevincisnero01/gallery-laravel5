@@ -16,7 +16,7 @@
 				<div class="panel-heading">Inicio</div>
 
 				<div class="panel-body">
-					Bienvenido (Usuario) haz iniciado sesion.
+					Bienvenido ( {{Auth::user()->nombre}} ) haz iniciado sesion.
 				</div>
 			</div>
 		</div>
