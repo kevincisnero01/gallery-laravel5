@@ -7,6 +7,8 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
 
 use GestorGaleria\Http\Requests\IniciarSesionRequest;
+use GestorGaleria\Http\Requests\RecuperarContrasenaRequest;
+use GestorGaleria\Usuario;
 
 class ValidacionController extends Controller {
 
@@ -96,9 +98,24 @@ class ValidacionController extends Controller {
 		return view('validacion.recuperar');
 	}
 
-	public function postRecuperar()
+	public function postRecuperar(RecuperarContrasenaRequest $request)
 	{
-		return 'recuperando contraseña';
+			$pregunta = $request->get('pregunta');
+			$respuesta = $request->get('respuesta');
+			$email = $request->get('email');
+
+			$usuario = Usuario::where('email','=',$email)->first();
+
+			if($pregunta === $usuario->pregunta && $respuesta === $usuario->respuesta)
+			{
+				$contrasena = $request->get('password');
+				$usuario->password = bcrypt($contrasena);
+				$usuario->save();
+
+				return redirect('/validacion/inicio')->with(['recuperada'=> 'La contraseña se actualizo corecctamente, ya puede iniciar sesion']);
+			}
+
+		return redirect('/validacion/recuperar')->withInput($request->only('email','email'))->withErrors(['pregunta' => 'La pregunta y/o respuesta  ingresadas no coinciden']);
 	}
 	
 }

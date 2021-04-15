@@ -25,6 +25,13 @@
 						</div>
 					@endif
 
+					@if (Session::has('recuperada'))
+						<div class="alert alert-success">
+							<strong>Exito!</strong>.<br>
+							{{Session::get('recuperada')}}
+						</div>
+					@endif
+
 					<form class="form-horizontal" role="form" method="POST" action="/validacion/inicio">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
