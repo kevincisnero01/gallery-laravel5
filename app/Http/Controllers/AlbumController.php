@@ -1,5 +1,7 @@
 <?php namespace GestorGaleria\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+
 class AlbumController extends Controller {
 
 	public function __construct()
@@ -8,8 +10,11 @@ class AlbumController extends Controller {
 	}
 	
 	public function getIndex()
-	{
-		return 'Mostrando Fotos del usuario';
+	{	
+		$usuario = Auth::user();
+		$albunes = $usuario->albumes;
+
+		return view('albunes.mostrar', ['albunes' => $albunes]);
 	}
 
 	public function getCrearAlbum()
